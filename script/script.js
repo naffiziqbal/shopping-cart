@@ -13,7 +13,7 @@ taxAmountValue = (subTotalAmountValue * 15) / 100;
 taxAmount.innerText = taxAmountValue;
 
 const grandTotalAmount = document.getElementById('grand-total-amount');
-const newGrandTotalAmount =  taxAmountValue + subTotalAmountValue;
+const newGrandTotalAmount = taxAmountValue + subTotalAmountValue;
 grandTotalAmount.innerText = newGrandTotalAmount;
 
 // Mobile area 
@@ -25,6 +25,8 @@ document.getElementById('btn-mobile-plus').addEventListener('click', () => {
     const inputFiledString = inputFiled.value;
     const inputFiledValue = parseInt(inputFiledString);
     const quantity = inputFiledValue + 1;
+    console.log(quantity, `quantity`);
+    
     inputFiled.value = quantity
 
     //  Update Price Code
@@ -36,6 +38,20 @@ document.getElementById('btn-mobile-plus').addEventListener('click', () => {
     const itemPriceMobile = document.getElementById('item-price-mobile');
     const itemPriceMobileString = itemPriceMobile.innerText;
     const itemPriceMobileValue = parseFloat(itemPriceMobileString);
+    console.log(itemPriceMobileValue, `mobile old item Price`);
+    const currentItemPrice = 1219 * quantity;
+    console.log(currentItemPrice);
+    
+    itemPriceMobile.innerText = currentItemPrice
+
+
+    // const currentItemPrice = 
+
+    // itemPriceMobile.innerText = ;
+
+
+
+
 
     const newSubTotalAmount = subTotalAmountValue + itemPriceMobileValue;
     subTotalAmount.innerText = newSubTotalAmount;
@@ -49,9 +65,7 @@ document.getElementById('btn-mobile-plus').addEventListener('click', () => {
     const taxAmount = document.getElementById('tax-amount');
     const taxAmountString = taxAmount.innerText;
     let taxAmountValue = parseFloat(taxAmountString);
-    console.log(taxAmountValue);
     taxAmountValue = (newSubTotalAmount * 15) / 100;
-    console.log(taxAmountValue);
     taxAmount.innerText = taxAmountValue;
 
     //  Grand Total Amount 
@@ -59,7 +73,6 @@ document.getElementById('btn-mobile-plus').addEventListener('click', () => {
     const grandTotalAmount = document.getElementById('grand-total-amount');
     const grandTotalAmountString = grandTotalAmount.innerText;
     const grandTotalAmountValue = parseFloat(grandTotalAmountString);
-    console.log(grandTotalAmountValue, `under the hood`);
 
     const newGrandTotalAmount = taxAmountValue + newSubTotalAmount;
 
@@ -93,16 +106,21 @@ document.getElementById('btn-mobile-minus').addEventListener('click', () => {
     const newSubTotalAmount = subTotalAmountValue - itemPriceMobileValue;
     subTotalAmount.innerText = newSubTotalAmount;
 
+    const currentItemPrice = 1219 * quantity;
+    console.log(currentItemPrice);
+    
+    itemPriceMobile.innerText = currentItemPrice
 
 
-     // Grand Total Cost After Tax  
+    
+
+    // Grand Total Cost After Tax  
 
     //  Tax Area;
 
     const taxAmount = document.getElementById('tax-amount');
     const taxAmountString = taxAmount.innerText;
     let taxAmountValue = parseFloat(taxAmountString);
-    console.log(taxAmountValue);
     taxAmountValue = (newSubTotalAmount * 15) / 100;
     taxAmount.innerText = taxAmountValue;
 
@@ -112,7 +130,7 @@ document.getElementById('btn-mobile-minus').addEventListener('click', () => {
     const grandTotalAmountString = grandTotalAmount.innerText;
     const grandTotalAmountValue = parseFloat(grandTotalAmountString);
 
-    const newGrandTotalAmount =   newSubTotalAmount - taxAmountValue;
+    const newGrandTotalAmount = newSubTotalAmount - taxAmountValue;
 
     grandTotalAmount.innerText = newGrandTotalAmount;
 
@@ -146,8 +164,11 @@ document.getElementById('btn-case-plus').addEventListener('click', () => {
     subTotalAmount.innerText = newSubTotalAmount;
 
 
+    const currentItemPrice = 59 * quantity;
+    itemPriceMobile.innerText = currentItemPrice
 
-     // Grand Total Cost After Tax  
+
+    // Grand Total Cost After Tax  
 
     //  Tax Area;
 
@@ -193,6 +214,9 @@ document.getElementById('btn-case-minus').addEventListener('click', () => {
     subTotalAmount.innerText = newSubTotalAmount;
 
 
+    const currentItemPrice = 59 * quantity;
+    itemPriceMobile.innerText = currentItemPrice
+
     // Grand Total Cost After Tax  
 
     //  Tax Area;
@@ -209,7 +233,7 @@ document.getElementById('btn-case-minus').addEventListener('click', () => {
     const grandTotalAmountString = grandTotalAmount.innerText;
     const grandTotalAmountValue = parseFloat(grandTotalAmountString);
 
-    const newGrandTotalAmount =  newSubTotalAmount - taxAmountValue ;
+    const newGrandTotalAmount = newSubTotalAmount - taxAmountValue;
 
     grandTotalAmount.innerText = newGrandTotalAmount;
 })
